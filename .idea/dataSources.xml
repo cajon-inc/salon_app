@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails salon_app: test" uuid="38bb4e15-3640-4011-b101-d0a23463a312">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://db:5432/myapp_test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails salon_app: production" uuid="1716c5ca-7548-4b2d-ae66-619c305b3e1c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://db:5432/myapp_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails salon_app: development" uuid="e97421f9-2c81-42b4-a31d-95c59f62c75d">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://db:5432/myapp_development</jdbc-url>
+    </data-source>
+  </component>
+</project>
