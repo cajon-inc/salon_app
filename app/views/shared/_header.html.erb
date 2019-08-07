@@ -13,8 +13,7 @@
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.email %></a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">ダッシュボード</a>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
