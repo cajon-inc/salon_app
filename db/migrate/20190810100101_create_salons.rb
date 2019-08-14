@@ -22,7 +22,12 @@ class CreateSalons < ActiveRecord::Migration[5.2]
       t.text :hour
       t.text :holiday
       t.text :access
-      t.boolean :card
+      t.boolean :is_visa
+      t.boolean :is_master
+      t.boolean :is_jcb
+      t.boolean :is_amex
+      t.boolean :is_diners
+      t.boolean :is_union
       t.text :map
       t.string :reserve
       t.string :facebook

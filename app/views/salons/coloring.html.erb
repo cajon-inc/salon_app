@@ -1,2 +1,19 @@
-<h1>Salon#coloring</h1>
-<p>Find me in app/views/salon/coloring.html.erb</p>
+<div class="row">
+  <%= render 'salon_top_menu' %>
+
+  <main role="main" class="col-md-9 ml-sm-auto">
+    <div class="card">
+      <div class="card-header">
+        カラー変更
+      </div>
+      <div class="card-body">
+        <div class="container">
+          <%= form_for @salon do |f| %>
+
+            <div><%= f.submit "保存", class: "btn btn-primary btn-lg" %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
