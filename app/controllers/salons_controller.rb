@@ -16,7 +16,8 @@ class SalonsController < ApplicationController
     if @salon.save
       redirect_to listing_salon_path(@salon), notice: '保存しました'
     else
-      render :new, notice: '問題が発生しました'
+      flash[:alert] = "問題が発生しました"
+      render :new
     end
   end
 
@@ -46,9 +47,9 @@ class SalonsController < ApplicationController
 
   def update
     if @salon.update(salon_params)
-      flash[:notice] = "更新しました"
+      flash[:notice] = "保存しました"
     else
-      flash[:notice] = "問題が発生しました"
+      flash[:alert] = "問題が発生しました"
     end
     redirect_back(fallback_location: request.referer)
   end
