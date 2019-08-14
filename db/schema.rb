@@ -10,10 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_100905) do
+ActiveRecord::Schema.define(version: 2019_08_10_100101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "salons", force: :cascade do |t|
+    t.string "shop_name"
+    t.string "nav_logo"
+    t.string "top_catch"
+    t.string "logo"
+    t.string "youtube_id"
+    t.string "concept1_title"
+    t.string "concept1_image"
+    t.text "concept1"
+    t.string "concept2_title"
+    t.string "concept2_image"
+    t.text "concept2"
+    t.string "concept3_title"
+    t.string "concept3_image"
+    t.text "concept3"
+    t.string "store_photo"
+    t.string "address"
+    t.string "tel"
+    t.string "tel_sp"
+    t.text "hour"
+    t.text "holiday"
+    t.text "access"
+    t.boolean "is_visa"
+    t.boolean "is_master"
+    t.boolean "is_jcb"
+    t.boolean "is_amex"
+    t.boolean "is_diners"
+    t.boolean "is_union"
+    t.text "map"
+    t.string "reserve"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "twitter"
+    t.string "hotpepper"
+    t.string "youtube"
+    t.string "blog"
+    t.string "site"
+    t.string "recruit"
+    t.string "copy"
+    t.string "footer_logo"
+    t.string "link_color"
+    t.string "bgcolor_2"
+    t.string "concept_color"
+    t.string "reserve_btn_bg"
+    t.string "reserve_btn_txt"
+    t.string "data_bgcolor"
+    t.string "data_color"
+    t.string "sp_fix_btn"
+    t.text "retargeting"
+    t.text "gtm_head"
+    t.text "gtm_body"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_salons_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +84,5 @@ ActiveRecord::Schema.define(version: 2019_08_06_100905) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "salons", "users"
 end
