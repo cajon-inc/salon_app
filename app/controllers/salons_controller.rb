@@ -26,6 +26,9 @@ class SalonsController < ApplicationController
   def listing
   end
 
+  def sublisting
+  end
+
   def concept
   end
 

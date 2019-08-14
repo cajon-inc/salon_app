@@ -20,7 +20,7 @@ class CreateSalons < ActiveRecord::Migration[5.2]
       t.string :tel
       t.string :tel_sp
       t.text :hour
-      t.text :hour
+      t.text :holiday
       t.text :access
       t.boolean :card
       t.text :map

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :salons, except: [:edit] do
     member do
       get 'listing'
+      get 'sublisting'
       get 'concept'
       get 'coloring'
       get 'location'

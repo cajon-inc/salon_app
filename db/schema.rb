@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_08_10_100101) do
     t.string "tel"
     t.string "tel_sp"
     t.text "hour"
+    t.text "holiday"
     t.text "access"
     t.boolean "card"
     t.text "map"
