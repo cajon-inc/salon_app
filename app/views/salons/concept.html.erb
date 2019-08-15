@@ -16,6 +16,7 @@
             <div class="form-group">
               <label>こだわり1　画像</label>
               <%= f.file_field :concept1_image, id: "concept1_image", class: "form-control" %>
+              <%= link_to '削除', @salon.concept1_image.purge, class: "rm_image_btn float-right" %>
             </div>
             <div class="form-group">
               <label>こだわり1　説明文</label>
@@ -28,6 +29,7 @@
             <div class="form-group">
               <label>こだわり2　画像</label>
               <%= f.file_field :concept2_image, id: "concept2_image", class: "form-control" %>
+              <%= link_to '削除', @salon.concept2_image.purge, class: "rm_image_btn float-right" %>
             </div>
             <div class="form-group">
               <label>こだわり2　説明文</label>
@@ -40,6 +42,7 @@
             <div class="form-group">
               <label>こだわり3　画像</label>
               <%= f.file_field :concept3_image, id: "concept3_image", class: "form-control" %>
+              <%= link_to '削除', @salon.concept3_image.purge, class: "rm_image_btn float-right" %>
             </div>
             <div class="form-group">
               <label>こだわり3　説明文</label>
