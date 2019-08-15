@@ -7,33 +7,53 @@
       <ul class="nav flex-column">
         <li class="nav-item">
           <%= link_to "基本情報", listing_salon_path, class: "sidebar-link active" %>
-          <span class="float-right"><i class="fa fa-check"></i></span>
+          <span class="float-right text-success"><i class="fa fa-check"></i></span>
         </li>
         <li class="nav-item">
           <%= link_to "サブ情報", sublisting_salon_path, class: "sidebar-link active" %>
-          <span class="float-right"><i class="fa fa-check"></i></span>
+          <% if !@salon.top_catch.blank? %>
+            <span class="float-right text-success"><i class="fa fa-check"></i></span>
+          <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "コンセプト", concept_salon_path, class: "sidebar-link active" %>
-          <span class="float-right"><i class="fa fa-check"></i></span>
+          <% if !@salon.concept1_title.blank? %>
+            <span class="float-right text-success"><i class="fa fa-check"></i></span>
+          <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "リンク", links_salon_path, class: "sidebar-link active" %>
-          <span class="float-right"><i class="fa fa-check"></i></span>
+          <% if !@salon.reserve.blank? %>
+            <span class="float-right text-success"><i class="fa fa-check"></i></span>
+          <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "ロケーション", location_salon_path, class: "sidebar-link active" %>
-          <span class="float-right"><i class="fa fa-check"></i></span>
+          <% if !@salon.address.blank? %>
+            <span class="float-right text-success"><i class="fa fa-check"></i></span>
+          <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "カラー", coloring_salon_path, class: "sidebar-link active" %>
-          <span class="float-right"><i class="fa fa-check"></i></span>
+          <span class="float-right text-success"><i class="fa fa-check"></i></span>
         </li>
         <li class="nav-item">
           <%= link_to "タグマネージャー", tagmanage_salon_path, class: "sidebar-link active" %>
-          <span class="float-right"><i class="fa fa-check"></i></span>
+          <% if !@salon.gtm_head.blank? %>
+            <span class="float-right text-success"><i class="fa fa-check"></i></span>
+          <% end %>
         </li>
       </ul>
     </div>
   </div>
+  <hr />
+
+  <% is_ready = !@salon.top_catch.blank? && !@salon.concept1_title.blank? && !@salon.reserve.blank? && !@salon.address.blank? && !@salon.gtm_head.blank? %>
+
+  <%= form_for @salon do |f| %>
+    <%= f.hidden_field :active, value: true %>
+    <%= f.submit "公開", id: "publish_button", class: "btn btn-warning btn-block", disabled: !is_ready %>
+  <% end %>
+
+
 </div>
