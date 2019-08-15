@@ -9,6 +9,38 @@
       <div class="card-body">
         <div class="container">
           <%= form_for @salon do |f| %>
+            <div class="form-group">
+              <label>リンク文字色</label>
+              <%= f.color_field :link_color, id: "link_color", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <label>背景色メインカラー</label>
+              <%= f.color_field :bgcolor_2, id: "bgcolor_2", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <label>concept ナンバーカラー</label>
+              <%= f.color_field :concept_color, id: "concept_color", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <label>予約ボタン背景</label>
+              <%= f.color_field :reserve_btn_bg, id: "reserve_btn_bg", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <label>予約ボタン文字色</label>
+              <%= f.color_field :reserve_btn_txt, id: "reserve_btn_txt", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <label>アクセス背景</label>
+              <%= f.color_field :data_bgcolor, id: "data_bgcolor", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <label>アクセス文字色</label>
+              <%= f.color_field :data_color, id: "data_color", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <label>スマホ固定ボタン</label>
+              <%= f.color_field :sp_fix_btn, id: "sp_fix_btn", class: "form-control" %>
+            </div>
 
             <div><%= f.submit "保存", class: "btn btn-primary btn-lg" %></div>
           <% end %>
