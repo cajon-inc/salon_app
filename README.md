@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+サロンページ　システム
 
-Things you may want to cover:
+* Ruby version <br>
+Docker Ruby2.6.3 Rails5.2.2
 
-* Ruby version
+* Database creation <br>
+Postgre
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
