@@ -16,14 +16,17 @@
             <div class="form-group">
               <label>ナビ　ロゴ　* png形式</label>
               <%= f.file_field :nav_logo, id: "nav_logo", class: "form-control" %>
+              <%= link_to '削除', @salon.nav_logo.purge, class: "rm_image_btn float-right" %>
             </div>
             <div class="form-group">
               <label>ロゴ</label>
               <%= f.file_field :logo, id: "logo", class: "form-control" %>
+              <%= link_to '削除', @salon.logo.purge, class: "rm_image_btn float-right" %>
             </div>
             <div class="form-group">
               <label>フッターロゴ</label>
               <%= f.file_field :footer_logo, id: "footer_logo", class: "form-control" %>
+              <%= link_to '削除', @salon.footer_logo.purge, class: "rm_image_btn float-right" %>
             </div>
             <div class="form-group">
               <label>Youtube ID</label>
@@ -32,6 +35,7 @@
             <div class="form-group">
               <label>店内写真</label>
               <%= f.file_field :store_photo, id: "store_photo", class: "form-control" %>
+              <%= link_to '削除', @salon.store_photo.purge, class: "rm_image_btn float-right" %>
             </div>
             <div class="form-group">
               <label>著作権表記</label>
