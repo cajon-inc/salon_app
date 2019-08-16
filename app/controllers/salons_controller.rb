@@ -43,10 +43,14 @@ class SalonsController < ApplicationController
   end
 
   def tagmanage
+
   end
 
   def update
-    if @salon.update(salon_params)
+    new_params = salon_params
+    new_params = salon_params.merge(active: true) if is_ready_salon
+
+    if @salon.update(new_params)
       flash[:notice] = "保存しました"
     else
       flash[:alert] = "問題が発生しました"
@@ -58,6 +62,10 @@ class SalonsController < ApplicationController
 
   def set_salon
     @salon = Salon.find(params[:id])
+  end
+
+  def is_ready_salon
+    !@salon.active && !@salon.top_catch.blank? && !@salon.concept1_title.blank? && !@salon.reserve.blank? && !@salon.address.blank? && !@salon.gtm_head.blank?
   end
 
   def salon_params
