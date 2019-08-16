@@ -1,6 +1,7 @@
 class SalonsController < ApplicationController
   before_action :set_salon, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
+  before_action :no_layout_action, only: [:show]
 
 
   def index
@@ -66,6 +67,10 @@ class SalonsController < ApplicationController
 
   def is_ready_salon
     !@salon.active && !@salon.top_catch.blank? && !@salon.concept1_title.blank? && !@salon.reserve.blank? && !@salon.address.blank? && !@salon.gtm_head.blank?
+  end
+
+  def no_layout_action
+    render layout: false
   end
 
   def salon_params
