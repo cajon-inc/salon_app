@@ -1,2 +1,570 @@
-<h1>Salon#show</h1>
-<p>Find me in app/views/salon/show.html.erb</p>
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>salon-page | Just another Cajon Salon site</title>
+  <link rel='stylesheet' id='sb_instagram_styles-css' href='http://cajon.biz/salon-page-union/salon-page/wp-content/plugins/instagram-feed/css/sb-instagram.min.css?ver=1.11.2' type='text/css' media='all' />
+  <link rel='stylesheet' id='sb-font-awesome-css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+  <link rel='stylesheet' id='SourceSansPro-css' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A300%2C400%2C700&#038;ver=5.0.4' type='text/css' media='all' />
+  <link rel='stylesheet' id='AbrilFatface-css' href='https://fonts.googleapis.com/css?family=Abril+Fatface&#038;ver=5.0.4' type='text/css' media='all' />
+  <link rel='stylesheet' id='fontawesome-css' href='https://use.fontawesome.com/releases/v5.1.0/css/all.css?ver=5.0.4' type='text/css' media='all' />
+  <link rel='stylesheet' id='bootstrap4-css' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css?ver=5.0.4' type='text/css' media='all' />
+
+  <%= stylesheet_link_tag    'salon', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+</head>
+
+<body>
+<header class="cd-header">
+  <div class="cd-logo">
+    <a href="http://cajon.biz/salon-page-union/salon-page">
+      <h1 style="background-image:url(http://placehold.jp/120x60.png?text=logo);"><span></span></h1>
+    </a>
+    <h2 class="catch-copy"></h2>
+  </div>
+  <a class="cd-primary-nav-trigger" href="#0">
+    <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+  </a>
+</header>
+<nav>
+  <ul class="cd-primary-nav">
+    <li><a href="/">TOP -店舗トップ-</a></li>
+    <!-- <li><a href="menu.html">MENU -メニュー-</a></li> -->
+    <li><a href="style.html">STYLE -スタイル-</a></li>
+    <li><a href="stylist.html">STYLIST -スタイリスト-</a></li>
+    <li><a href="<%= @salon.reserve %>" target="_blank">RESERVE -ご予約-</a></li>
+    <li><a href="<%= @salon.recruit %>" target="_blank">RECRUIT -採用情報-</a></li>
+    <li>
+      <ul class="sns">
+        <li><a href="<%= @salon.facebook %>"><i class="fab fa-facebook-square"></i></a></li>
+        <li><a href="<%= @salon.instagram %>"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="<%= @salon.twitter %>"><i class="fab fa-twitter-square"></i></a></li>
+        <li><a href="<%= @salon.hotpepper %>"><i class="fab fa-hire-a-helper"></i></a></li>
+        <li><a href="<%= @salon.youtube %>"><i class="fab fa-youtube"></i></a></li>
+        <li><a href="<%= @salon.blog %>"><i class="fab fa-blogger"></i></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<main style="background-color:<%= @salon.bgcolor_2 %>;">
+  <section class="intro">
+    <div class="row no-gutters intro-content">
+      <div class="col-xl-4 col-md-7 mx-auto col-sm-10 order-2 order-xl-1">
+        <div class="row no-gutters intro-grid">
+          <div class="col-4">
+            <div class="style-image-area">
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/06/B041350632.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="style-image-area">
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/06/B031414258.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="style-image-area">
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/06/B026025539.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="style-image-area">
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/06/B027420695.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="style-image-area">
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/06/B026345917.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="style-image-area">
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/06/B027420020.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="style-image-area">
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/06/B030091539.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="style-image-area">
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/06/B020679827.jpg" alt="" />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="style-image-area">
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/06/B022228511.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-8 col-md-12 col-sm-12 order-1 order-xl-2">
+        <div class="youtube_video">
+          <div id="player"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="concept">
+    <scction class="title text-center">
+      <div class="col-6 mx-auto">
+        <img src="" alt="" />
+        <h2>Concept</h2>
+      </div>
+    </scction>
+
+    <article class="container">
+      <section class="concept-1 row">
+        <div class="col-md-6 col-sm-12 order-2 order-md-1">
+          <h3><span style="color:<%= @salon.concept_color %>">01</span><%= @salon.concept1_title %></h3>
+          <p><%= @salon.concept1 %></p>
+        </div>
+        <div class="col-md-6 col-sm-12 order-1 order-md-2">
+          <%= image_tag(@salon.concept1_image, class: "img-fluid") if @salon.concept1_image.attached? %>
+        </div>
+      </section>
+
+      <section class="concept-2 row">
+        <div class="col-md-6">
+          <%= image_tag(@salon.concept2_image, class: "img-fluid") if @salon.concept2_image.attached? %>
+        </div>
+        <div class="col-md-6">
+          <h3><span style="color:<%= @salon.concept_color %>">02</span><%= @salon.concept2_title %></h3>
+          <p><%= @salon.concept2 %></p>
+        </div>
+      </section>
+      <section class="concept-3">
+        <div class="col-lg-8 mx-auto">
+          <%= image_tag(@salon.concept3_image, class: "img-fluid") if @salon.concept3_image.attached? %>
+          <h3 class="text-center"><span style="color:<%= @salon.concept_color %>">03</span></h3>
+          <h3 class="text-center"><%= @salon.concept3_title %></h3>
+          <p><%= @salon.concept3 %></p>
+        </div>
+      </section>
+    </article>
+  </section>
+  <!--//concept-->
+
+  <article class="front_menu">
+    <scction class="title text-center">
+      <div class="col-6 mx-auto">
+        <h2>Menu</h2>
+      </div>
+    </scction>
+    <div class="container menu-page">
+      <div class="col-md-10 mx-auto">
+        <h3><i class="fas fa-cut"></i>7月ご新規様限定</h3>
+        <div class="row mb-3 row-line pb-3">
+          <div class="col-12 mb-3">
+            <h4><a href="http://" target="_blank" onclick="ga('send', 'event','link', 'reserve', 'menu1');">■人気No.1■<br>LIMカット＋カラー＋トリートメント</a></h4>
+          </div>
+          <div class="col-3 col-md-2 pr-0 pr-lg-3">
+            <img width="250" height="350" src="http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/06/B027420695-250x350.jpg" class="attachment-menu_img size-menu_img" alt="" /> </div>
+          <div class="col-9 col-md-10">
+            <p class="menu_price mb-2">¥18,900</p>
+            <p class="menu_description">新規のお客様人気No.1メニュー☆<br />
+              大人でも楽しめるヘアデザインをご提供させていただきます。<br />
+              ナチュラルだけど”どこか違う”。<br />
+              そんなあなただけのこだわりのデザインを見つけます。</p>
+          </div>
+        </div>
+        <div class="row mb-3 row-line pb-3">
+          <div class="col-12 mb-3">
+            <h4><a href="http://" target="_blank" onclick="ga('send', 'event','link', 'reserve', 'menu2');">■人気No.2■<br>「美の伝道師」カンタロウカット</a></h4>
+          </div>
+          <div class="col-3 col-md-2 pr-0 pr-lg-3">
+            <img width="250" height="350" src="http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/06/B020679830-250x350.jpg" class="attachment-menu_img size-menu_img" alt="" /> </div>
+          <div class="col-9 col-md-10">
+            <p class="menu_price mb-2">¥34,020〜</p>
+            <p class="menu_description">東京、大阪、シンガポール、ロンドンの4都市を週ごとに移動しながらハサミを振るうLIM統括ディレクターによる、カット＋カラーのコース。<br />
+              ご予約はかなり混み合っておりますが、業界で知らぬ者はいない彼のホンモノの技術を一度経験してみては？<br />
+              ※ミディアム+¥500、ロング+¥1000を頂いております。</p>
+          </div>
+        </div>
+        <div class="row mb-3 row-line pb-3">
+          <div class="col-12 mb-3">
+            <h4><a href="http://" target="_blank" onclick="ga('send', 'event','link', 'reserve', 'menu3');">■人気No.3■<br>LIMカット＋カラー</a></h4>
+          </div>
+          <div class="col-3 col-md-2 pr-0 pr-lg-3">
+            <img width="250" height="350" src="http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/06/B020679831-250x350.jpg" class="attachment-menu_img size-menu_img" alt="" /> </div>
+          <div class="col-9 col-md-10">
+            <p class="menu_price mb-2">¥14,040</p>
+            <p class="menu_description">まずはお試し、カット+カラーのコース！<br />
+              業界トップクラスのNu+LIMの繊細なカットとこだわりのデザインカラーを是非ご体感ください。</p>
+          </div>
+        </div>
+        <div class="btn-area">
+          <button type="button" class="menu-btn" data-toggle="modal" data-target=".menu-modal">メニュー詳細</button>
+        </div>
+        <div class="modal fade menu-modal" tabindex="-1" role="dialog" aria-labelledby="MenuModal" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <section class="title text-center w-100">
+                  <h2>Menu</h2>
+                </section>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container menu-page pb-5">
+                  <div class="col-12 mx-auto">
+
+                    <h3><i class="fas fa-cut"></i>カット</h3>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>トップスタイリスト</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥7,560</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>スタイリスト</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥6,480</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+
+                    <h3><i class="fas fa-cut"></i>カラー</h3>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ショート</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥7,560</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ミディアム</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥8,060</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ロング</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥8,560</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ポイントカラー</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥1,080〜</p>
+                        <p class="menu_description">※別途スタイリング料金¥2,160がかかります。</p>
+                      </div>
+                    </div>
+
+                    <h3><i class="fas fa-cut"></i>パーマ</h3>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>カット+パーマ</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥14,040〜</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ポイントパーマ</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥4,320〜</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+
+                    <h3><i class="fas fa-cut"></i>ストレートパーマ</h3>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ショート</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥10,800</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ミディアム</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥11,880</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ロング</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥12,960</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ポイントストレート</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥5,400</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+
+                    <h3><i class="fas fa-cut"></i>縮毛矯正</h3>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ショート </h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥16,200</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ミディアム</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥17,280</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ロング</h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥18,360</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+                    <div class="row mb-3 row-line">
+                      <div class="col-md-4">
+                        <h4>ポイント縮毛矯正 </h4>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="menu_price mb-2">¥8,100</p>
+                        <p class="menu_description"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <!--col-->
+                </div>
+                <!--container-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article>
+    <section class="title text-center">
+      <h2>Shop</h2>
+    </section>
+    <scction class="shop-bg">
+      <style>
+        .shop-bg{
+          background-image: url("http://cajon.biz/salon-page-union/salon-page/wp-content/uploads/sites/3/2018/10/shop-info.jpg");
+        }
+      </style>
+      <section class="btn_area col-md-6 mx-auto">
+        <a href="https://beauty.hotpepper.jp/" class="btn-3" onclick="ga('send', 'event','link', 'reserve', 'body');" style="background-color: rgba(30,115,190, .95); color:#ffffff;" onMouseOver="this.style.background='rgba(30,115,190, .8)'" onMouseOut="this.style.background='rgba(30,115,190, .95)'">RESERVE
+          -ご予約-</a>
+      </section>
+    </scction>
+  </article>
+  <article>
+    <section class="title text-center">
+      <h2>Access</h2>
+    </section>
+    <section>
+      <div class="row no-gutters map-area">
+        <div class="col-lg-4 col-sm-12 order-2 order-lg-1">
+          <dl class="data-area" style="color:<%= @salon.data_color %>; background-color:<%= @salon.data_bgcolor %>;">
+            <dd><%= @salon.address %></dd>
+            <dt>TEL</dt>
+            <dd><%= @salon.tel %></dd>
+            <dt>営業時間</dt>
+            <dd><%= @salon.hour %></dd>
+            <dt>定休日</dt>
+            <dd><%= @salon.holiday %></dd>
+            <dt>ACCESS</dt>
+            <dd><%= @salon.access %></dd>
+            <dt>CREDIT CARD</dt>
+            <dd class="card-area">
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/themes/salon-page/img/card1.jpg" alt="visa" />
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/themes/salon-page/img/card2.jpg" alt="master" />
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/themes/salon-page/img/card3.png" alt="jcb" />
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/themes/salon-page/img/card4.png" alt="amex" />
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/themes/salon-page/img/card5.png" alt="diners" />
+              <img src="http://cajon.biz/salon-page-union/salon-page/wp-content/themes/salon-page/img/card6.png" alt="unionpay" />
+            </dd>
+          </dl>
+        </div>
+        <div class="col-lg-8 col-sm-12 order-1 order-lg-2">
+          <div class="g-map">
+            <%= @salon.map %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <div class="sm-info no-gutters text-center">
+    <div class="row">
+      <div class="col-6 info-contact" style="background-color:<%= @salon.reserve_btn_bg %>;">
+        <a href="https://beauty.hotpepper.jp/" class="calender" target="_blank" onclick="ga('send', 'event','link', 'reserve', 'smartphone');"><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;ご予約はこちら</a>
+      </div>
+      <div class="col-6 info-contact" style="background-color:<%= @salon.reserve_btn_bg %>;">
+        <div class="mobile">
+          <a href="tel:<%= @salon.tel_sp %>" onclick="ga('send', 'event','link', 'tel', 'smartphone');"><i class="fa fa-mobile" aria-hidden="true"></i> <span>&nbsp;TEL</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '100%',
+            width: '100%',
+            videoId: 'oeQ1pgp869Q',
+            playerVars: {
+                controls: 0,
+                autoplay: 1,
+                playsinline: 1,
+                rel: 1,
+                loop: 1,
+                playlist: 'oeQ1pgp869Q',
+                showinfo: 0
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+        event.target.mute();
+        event.target.playVideo();
+    }
+
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    var done = false;
+
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && done) {
+            setTimeout(stopVideo, 6000);
+            done = true;
+        }
+    }
+
+    function stopVideo() {
+        player.stopVideo();
+    }
+</script>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-5">
+        <img src="http://placehold.jp/120x60.png?text=logo" alt="ロゴ" class="img-fluid">
+      </div>
+      <div class="col-md-3 col-sm-7">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">TOP -店舗トップ-</a></li>
+          <!-- <li><a href="menu.html">MENU -メニュー-</a></li> -->
+          <li><a href="style.html">STYLE -スタイル-</a></li>
+          <li><a href="stylist.html">STYLIST -スタイリスト-</a></li>
+          <li><a href="<%= @salon.reserve %>" target="_blank">RESERVE -ご予約-</a></li>
+          <li><a href="<%= @salon.recruit %>" target="_blank">RECRUIT -採用情報-</a></li>
+          <li><a href="<%= @salon.site %>" target="_blank">WEB -公式サイト-</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-7">
+        <h4>Shop</h4>
+        <ul class="footer-shop">
+          <li>
+            <a href="http://cajon.biz/salon-page-union/salon-page/" target="_blank">
+              サロンページ1 </a>
+          </li>
+          <li>
+            <a href="http://cajon.biz/salon-page-union/salon-page/" target="_blank">
+              サロンページ2 </a>
+          </li>
+          <li>
+            <a href="http://cajon.biz/salon-page-union/salon-page/" target="_blank">
+              サロンページ3 </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-sm-5">
+        <h4>Follow Us</h4>
+        <ul>
+          <li class="cd-social cd-facebook"><a href="<%= @salon.facebook %>"><i class="fab fa-facebook-square"></i></a></li>
+          <li class="cd-social cd-instagram"><a href="<%= @salon.instagram %>"><i class="fab fa-instagram"></i></a></li>
+          <li class="cd-social cd-twitter"><a href="<%= @salon.twitter %>"><i class="fab fa-twitter-square"></i></a></li>
+          <li class="cd-social"><a href="<%= @salon.hotpepper %>"><i class="fab fa-hire-a-helper"></i></a></li>
+          <li class="cd-social"><a href="<%= @salon.youtube %>"><i class="fab fa-youtube"></i></a></li>
+          <li class="cd-social"><a href="<%= @salon.blog %>"><i class="fab fa-blogger"></i></a></li>
+          <li class="cd-social"><a href="https://salonpicks.net/" target="_blank"><span class="icon-salonpicks"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <article class="copy text-center">
+    <p class="clearfix">Copyright &copy; 2019
+      <%= @salon.copy %>. All Rights Reserved.
+    </p>
+  </article>
+</footer>
+
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src='http://cajon.biz/salon-page-union/salon-page/wp-content/plugins/instagram-feed/js/sb-instagram.min.js?ver=1.11.2'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js'></script>
+<script src='https://platform.instagram.com/en_US/embeds.js'></script>
+<script src='https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js'></script>
+<script src='js/main.js'></script>
+</body>
+</html>
