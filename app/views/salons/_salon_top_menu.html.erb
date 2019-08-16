@@ -48,7 +48,7 @@
   </div>
   <hr />
 
-  <% is_ready = !@salon.top_catch.blank? && !@salon.concept1_title.blank? && !@salon.reserve.blank? && !@salon.address.blank? && !@salon.gtm_head.blank? %>
+  <% is_ready = !@salon.active && !@salon.top_catch.blank? && !@salon.concept1_title.blank? && !@salon.reserve.blank? && !@salon.address.blank? && !@salon.gtm_head.blank? %>
 
   <%= form_for @salon do |f| %>
     <%= f.hidden_field :active, value: true %>
