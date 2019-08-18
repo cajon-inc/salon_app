@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'popper_js'
 gem 'toastr-rails'
 gem 'sass-rails'
+gem 'aws-sdk-s3'
 
 
 
